@@ -1,0 +1,38 @@
+= ActiveResource Cache Rails Plugin
+
+Web services are great, but they also slow down your apps. Your users make a 
+request to your application, which causes your app to make a request to a remote 
+application. The remote application then has to process the request, marshal the 
+request into either XML or JSON, send it over the wire where your app is waiting 
+to un-marshal that data back into a usable object.
+
+ActiveResource Cache allows you to cache the responses returned from your 
+ActiveResources for any specified amount of time. With short cache durations, 
+this is can be used on pages that load the same remote objects over and over. 
+For longer cache durations, it can be used to store a local hot cache of a 
+remote resource that may not change very often. Either way, the performance 
+benefits are immense.
+
+The local cache utilizes the same cache store as specified by your Rails app. So 
+if you already have your app configured to use something like memcached, this 
+plugin will also use that.
+
+== Configuration
+
+The default cache duration is one minute. To tweak this, create an initializer 
+and add this line:
+
+  ActiveResource::Connection.cache_duration = 3.hours
+
+== Requirements
+
+This plugin has currently only been tested on Rails 2.3.
+
+== Author
+
+* {Chris Cherry}[http://github.com/ctcherry]
+* {Mauricio Gomes}[http://github.com/mgomes]
+
+== Copyright
+
+Copyright (c) 2011 Gemini SBS. See LICENSE for details.
