@@ -4,7 +4,7 @@ module ActiveResourceCache
     base.send(:include, InstanceMethods)
     base.class_eval do
       cattr_accessor :cache_duration
-      self.cache_duration = 60.seconds
+      self.cache_duration = 60
     end
     base.class_eval do
       alias_method_chain :get, :resource_cache
