@@ -27,6 +27,18 @@ and add the following line:
 
 This plugin has currently only been tested on Rails 2.3.
 
+== Testing
+
+=== Run the tests
+
+  rake spec
+
+=== Gem requirements
+
+* Rails 2.3.x
+* RSpec 2.4.0
+* Fakeweb 1.3.0
+
 == Authors
 
 * {Chris Cherry}[http://github.com/ctcherry]
